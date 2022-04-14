@@ -1,0 +1,26 @@
+{
+  "name": "@memory13/webpack-build-compress-plugin",
+  "version": "1.0.0",
+  "description": "webpack打包自动生成zip压缩包的插件",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "patch": "npm version patch && git push --follow-tags && npm publish",
+    "minor": "npm version minor && git push --follow-tags && npm publish",
+    "major": "npm version major && git push --follow-tags && npm publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitee.com:zhigangzhang1/webpack-build-compress-plugin.git"
+  },
+  "keywords": [
+    "webpack",
+    "zip",
+    "压缩包"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jszip": "^3.9.1"
+  }
+}
