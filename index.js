@@ -2,6 +2,15 @@ const fs = require('fs');
 const path = require('path');
 const JsZip = require('jszip');
 
+const formatDate = () => {
+    const completion = (t) => (t < 10 ? `0${t}` : t)
+    const d = new Date();
+    const year = d.getFullYear();
+    const month = completion(d.getMonth() + 1);
+    const xx = ['getDate', 'getHours', 'getMinutes', 'getSeconds'].map((item) => completion(d[item]())).join('-')
+    return `${year}-${month}-${xx}`
+}
+
 // 读取目录及文件
 function readDir(obj, nowPath, nowFolder) {
     // 读取目录中的所有文件及文件夹
@@ -28,7 +37,7 @@ function startZip(outputPath) {
     const zip = new JsZip();
     const pathSep = path.sep
     const outputPathArr = outputPath.split(pathSep)
-    const zipName = `${outputPathArr[outputPathArr.length - 1]}-${new Date().getTime()}.zip`
+    const zipName = `${outputPathArr[outputPathArr.length - 1]}-${formatDate()}.zip`
 
     readDir(zip, outputPath, '');
     zip.generateAsync({
