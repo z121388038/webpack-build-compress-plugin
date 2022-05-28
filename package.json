@@ -1,6 +1,6 @@
 {
   "name": "@memory13/webpack-build-compress-plugin",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "webpack打包自动生成zip压缩包的插件",
   "main": "index.js",
   "scripts": {
