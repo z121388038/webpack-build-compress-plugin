@@ -49,8 +49,8 @@ class WebpackBuildCompressPlugin {
 
     apply(compiler) {
         const pluginName = WebpackBuildCompressPlugin.name
-        compiler.hooks.assetEmitted.tap(pluginName, (file, { outputPath }) => {
-            startZip(outputPath)
+        compiler.hooks.done.tap(pluginName, (stats) => {
+            startZip(stats.compilation.compiler.outputPath)
         })
     }
 }
